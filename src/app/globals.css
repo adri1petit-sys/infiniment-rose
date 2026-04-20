@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FAF7F5;
+  --ink: #0A0A0A;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Selection en rose Octobre Rose */
+::selection {
+  background: #E6007E;
+  color: #fff;
+}
+
+/* Scrollbar discret */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #E6007E33; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #E6007E66; }
+
+/* Gradient rose pour les accents */
+.gradient-rose {
+  background: linear-gradient(135deg, #E6007E 0%, #FFC8DD 100%);
+}
+
+.text-gradient-rose {
+  background: linear-gradient(135deg, #E6007E 0%, #A3005A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Bouton glow */
+.btn-rose {
+  background: #E6007E;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(230, 0, 126, 0.3);
+}
+
+.btn-rose:hover {
+  background: #A3005A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(230, 0, 126, 0.45);
+}
+
+/* Loop animation pour le compteur qui baisse */
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+.bounce-down { animation: bounceDown 1s ease-in-out; }
