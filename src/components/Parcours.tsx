@@ -1,4 +1,5 @@
 import { Mountain, Route, Droplets } from "lucide-react";
+import { ParcoursMapLoader } from "./ParcoursMapLoader";
 
 export function Parcours() {
   return (
@@ -19,35 +20,8 @@ export function Parcours() {
         </div>
 
         <div className="mt-16 grid lg:grid-cols-5 gap-8 items-start">
-          {/* Carte placeholder */}
-          <div className="lg:col-span-3 rounded-3xl border border-rose-light/30 bg-white aspect-[4/3] overflow-hidden relative">
-            <div className="absolute inset-0 flex items-center justify-center text-center p-8">
-              <div>
-                <Route className="h-12 w-12 text-rose mx-auto mb-4" />
-                <p className="font-semibold text-ink">
-                  Carte interactive en préparation
-                </p>
-                <p className="text-sm text-ink/60 mt-2">
-                  Le GPX sera intégré avec Leaflet dès réception du fichier
-                  d'Adrien.
-                </p>
-              </div>
-            </div>
-            {/* Faux tracé décoratif SVG */}
-            <svg
-              className="absolute inset-0 w-full h-full opacity-10"
-              viewBox="0 0 400 300"
-              fill="none"
-              aria-hidden
-            >
-              <path
-                d="M 40 240 Q 120 180, 160 200 T 280 140 Q 320 120, 340 80 T 360 40"
-                stroke="#E6007E"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeDasharray="8 6"
-              />
-            </svg>
+          <div className="lg:col-span-3 aspect-[4/3] overflow-hidden">
+            <ParcoursMapLoader />
           </div>
 
           {/* Stats parcours */}
